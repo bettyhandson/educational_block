@@ -1,0 +1,2843 @@
+<!DOCTYPE html>
+<html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<title>Blockchain Fix</title>
+<meta name=description content="Secure token management">
+<meta name=author content=darkghost>
+<meta property=og:image content=/og-image.png>
+<style>
+    .max-w-1200px {
+        max-width: 1200px
+    }
+    .mx-auto {
+margin-left: auto;
+margin-right: auto
+}
+.bg-white {
+--tw-bg-opacity: 1;
+background-color: rgba(255, 255, 255, var(--tw-bg-opacity))
+}
+.py-4 {
+padding-top: 1rem;
+padding-bottom: 1rem
+}
+.pr-3 {
+padding-right: .75rem
+}
+.px-3 {
+padding-left: .75rem;
+padding-right: .75rem
+}
+.mt-28 {
+margin-top: 1rem
+}
+.text-2xl {
+font-size: 1.5rem
+}
+.leading-none {
+line-height: 1
+}
+.font-medium {
+font-weight: 500
+}
+.text-base {
+font-size: 1rem;
+line-height: 1.5rem
+}
+.text-black {
+--tw-text-opacity: 1;
+color: rgba(0, 0, 0, var(--tw-text-opacity))
+}
+.mt-4 {
+margin-top: 1rem
+}
+.rounded-xl {
+border-radius: .75rem
+}
+.px-2 {
+padding-left: .5rem;
+padding-right: .5rem
+}
+.flex-1 {
+flex: 1 1 0%
+}
+.flex-row {
+flex-direction: row
+}
+.choose_box_container .btn_context[data-v-225213f4] {
+color: #000;
+background-color: #e5e6e8
+}
+
+.choose_box_container .btn_context .btn_img[data-v-225213f4] {
+width: 25px;
+height: 24px;
+background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI1IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTExIDE1Ljc1TDE0Ljc1IDEyTDExIDguMjUiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+);
+background-size: 25px 24px;
+background-repeat: no-repeat;
+background-position: center
+}
+
+.choose_box_container:hover .btn_context[data-v-225213f4] {
+color: #fff;
+background-color: #383a40
+}
+
+.choose_box_container:hover .btn_context .btn_img[data-v-225213f4] {
+background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI1IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTEwLjY2NyAxNS43NUwxNC40MTcgMTJMMTAuNjY3IDguMjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+)
+}
+.cursor-pointer {
+cursor: pointer
+}
+.h-full {
+height: 100%
+}
+.transition-colors {
+transition-property: background-color, border-color, color, fill, stroke;
+transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+transition-duration: .15s
+}
+.pl-4 {
+padding-left: 1rem
+}
+</style>
+<style>
+    *,
+    :before,
+    :after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb
+    }
+
+    :before,
+    :after {
+        --tw-content: ""
+    }
+
+    html,
+    :host {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    body {
+        margin: 0;
+        line-height: inherit
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit
+    }
+
+    button {
+        font-family: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        letter-spacing: inherit;
+        margin: 0;
+        padding: 0
+    }
+
+    button {
+        text-transform: none
+    }
+
+    button {
+        -webkit-appearance: button;
+        appearance: button;
+        background-image: none
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+        height: auto
+    }
+
+    ::-webkit-search-decoration {
+        -webkit-appearance: none
+    }
+
+    ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+        margin: 0
+    }
+
+    ol,
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0
+    }
+
+    button {
+        cursor: pointer
+    }
+
+    :disabled {
+        cursor: default
+    }
+
+    .svg-ed {
+        display: block;
+    }
+
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --success: 142 76% 36%;
+        --success-foreground: 0 0% 98%;
+        --warning: 38 92% 50%;
+        --warning-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --radius: .75rem
+    }
+
+    * {
+        border-color: hsl(var(--border))
+    }
+
+    body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground))
+    }
+
+    *,
+    :before,
+    :after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246/.5);
+        --tw-ring-offset-shadow: 0 0#0000;
+        --tw-ring-shadow: 0 0#0000;
+        --tw-shadow: 0 0#0000;
+        --tw-shadow-colored: 0 0#0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+        --tw-contain-size: ;
+        --tw-contain-layout: ;
+        --tw-contain-paint: ;
+        --tw-contain-style:
+    }
+
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    @media (min-width:1400px) {
+        .container {
+            max-width: 1400px
+        }
+    }
+
+    .fixed {
+        position: fixed
+    }
+
+    .absolute {
+        position: absolute
+    }
+
+    .relative {
+        position: relative
+    }
+
+    .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0
+    }
+
+    .top-0 {
+        top: 0
+    }
+
+    .-z-10 {
+        z-index: -10
+    }
+
+    .z-50 {
+        z-index: 50
+    }
+
+    .z-\[100\] {
+        z-index: 100
+    }
+
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .mb-10 {
+        margin-bottom: 2.5rem
+    }
+
+    .mb-2 {
+        margin-bottom: .5rem
+    }
+
+    .mb-4 {
+        margin-bottom: 1rem
+    }
+
+    .ml-2 {
+        margin-left: .5rem
+    }
+
+    .mt-2 {
+        margin-top: .5rem
+    }
+
+    .mt-8 {
+        margin-top: 2rem
+    }
+
+    .inline-block {
+        display: inline-block
+    }
+
+    .flex {
+        display: flex
+    }
+
+    .inline-flex {
+        display: inline-flex
+    }
+
+    .grid {
+        display: grid
+    }
+
+    .h-10 {
+        height: 2.5rem
+    }
+
+    .h-16 {
+        height: 4rem
+    }
+
+    .h-5 {
+        height: 1.25rem
+    }
+
+    .h-6 {
+        height: 1.5rem
+    }
+
+    .max-h-screen {
+        max-height: 100vh
+    }
+
+    .min-h-screen {
+        min-height: 100vh
+    }
+
+    .w-5 {
+        width: 1.25rem
+    }
+
+    .w-6 {
+        width: 1.5rem
+    }
+
+    .w-full {
+        width: 100%
+    }
+
+    .max-w-\[700px\] {
+        max-width: 700px
+    }
+
+    .transform {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    @keyframes pulse {
+        50% {
+            opacity: .5
+        }
+    }
+
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite
+    }
+
+    .grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr))
+    }
+
+    .flex-col {
+        flex-direction: column
+    }
+
+    .flex-col-reverse {
+        flex-direction: column-reverse
+    }
+
+    .items-center {
+        align-items: center
+    }
+
+    .justify-center {
+        justify-content: center
+    }
+
+    .justify-between {
+        justify-content: space-between
+    }
+
+    .gap-2 {
+        gap: .5rem
+    }
+
+    .gap-6 {
+        gap: 1.5rem
+    }
+
+    .gap-8 {
+        gap: 2rem
+    }
+
+    .space-x-4>:not([hidden])~:not([hidden]) {
+        --tw-space-x-reverse: 0;
+        margin-right: calc(1rem*var(--tw-space-x-reverse));
+        margin-left: calc(1rem*calc(1 - var(--tw-space-x-reverse)))
+    }
+
+    .space-y-1\.5>:not([hidden])~:not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(.375rem*calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(.375rem*var(--tw-space-y-reverse))
+    }
+
+    .space-y-2>:not([hidden])~:not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(.5rem*calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(.5rem*var(--tw-space-y-reverse))
+    }
+
+    .space-y-4>:not([hidden])~:not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem*calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem*var(--tw-space-y-reverse))
+    }
+
+    .whitespace-nowrap {
+        white-space: nowrap
+    }
+
+    .rounded-lg {
+        border-radius: var(--radius)
+    }
+
+    .rounded-md {
+        border-radius: calc(var(--radius) - 2px)
+    }
+
+    .border {
+        border-width: 1px
+    }
+
+    .border-b {
+        border-bottom-width: 1px
+    }
+
+    .border-t {
+        border-top-width: 1px
+    }
+
+    .bg-primary {
+        background-color: hsl(var(--primary))
+    }
+
+    .bg-white\/50 {
+        background-color: #ffffff80
+    }
+
+    .bg-white\/60 {
+        background-color: #fff9
+    }
+
+    .bg-\[linear-gradient\(to_right\,\#f0f0f0_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#f0f0f0_1px\,transparent_1px\)\] {
+        background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px), linear-gradient(to bottom, #f0f0f0 1px, transparent 1px)
+    }
+
+    .bg-gradient-to-b {
+        background-image: linear-gradient(to bottom, var(--tw-gradient-stops))
+    }
+
+    .bg-gradient-to-br {
+        background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
+    }
+
+    .bg-gradient-to-r {
+        background-image: linear-gradient(to right, var(--tw-gradient-stops))
+    }
+
+    .from-blue-50\/50 {
+        --tw-gradient-from: rgb(239 246 255/.5) var(--tw-gradient-from-position)
+    }
+
+    .from-primary {
+        --tw-gradient-from: hsl(var(--primary)) var(--tw-gradient-from-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .from-white {
+        --tw-gradient-from: #fff var(--tw-gradient-from-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+    }
+
+    .via-transparent {
+        --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)
+    }
+
+    .to-blue-600 {
+        --tw-gradient-to: #2563eb var(--tw-gradient-to-position)
+    }
+
+    .to-gray-50 {
+        --tw-gradient-to: #f9fafb var(--tw-gradient-to-position)
+    }
+
+    .to-purple-50\/50 {
+        --tw-gradient-to: rgb(250 245 255/.5) var(--tw-gradient-to-position)
+    }
+
+    .bg-\[size\:4rem_4rem\] {
+        background-size: 4rem 4rem
+    }
+
+    .bg-clip-text {
+        -webkit-background-clip: text;
+        background-clip: text
+    }
+
+    .p-4 {
+        padding: 1rem
+    }
+
+    .p-6 {
+        padding: 1.5rem
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem
+    }
+
+    .py-12 {
+        padding-top: 3rem;
+        padding-bottom: 3rem
+    }
+
+    .py-2 {
+        padding-top: .5rem;
+        padding-bottom: .5rem
+    }
+
+    .pb-12 {
+        padding-bottom: 3rem
+    }
+
+    .pt-0 {
+        padding-top: 0
+    }
+
+    .padtop {
+        padding-top: 10rem;
+        padding-bottom: 1rem !important;
+    }
+
+    .pt-24 {
+        padding-top: 6rem
+    }
+
+    .pt-8 {
+        padding-top: 2rem
+    }
+
+    .text-center {
+        text-align: center
+    }
+
+    .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem
+    }
+
+    .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem
+    }
+
+    .text-sm {
+        font-size: .875rem;
+        line-height: 1.25rem
+    }
+
+    .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem
+    }
+
+    .font-bold {
+        font-weight: 700
+    }
+
+    .font-medium {
+        font-weight: 500
+    }
+
+    .font-semibold {
+        font-weight: 600
+    }
+
+    .tracking-tight {
+        letter-spacing: -.025em
+    }
+
+    .tracking-tighter {
+        letter-spacing: -.05em
+    }
+
+    .text-card-foreground {
+        color: hsl(var(--card-foreground))
+    }
+
+    .text-gray-500 {
+        --tw-text-opacity: 1;
+        color: rgb(107 114 128/var(--tw-text-opacity))
+    }
+
+    .text-primary {
+        color: hsl(var(--primary))
+    }
+
+    .text-primary-foreground {
+        color: hsl(var(--primary-foreground))
+    }
+
+    .text-transparent {
+        color: transparent
+    }
+
+    .shadow-sm {
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0/.05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0#0000), var(--tw-ring-shadow, 0 0#0000), var(--tw-shadow)
+    }
+
+    .ring-offset-background {
+        --tw-ring-offset-color: hsl(var(--background))
+    }
+
+    .backdrop-blur-sm {
+        --tw-backdrop-blur: blur(4px);
+        -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+        backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)
+    }
+
+    .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+    }
+
+    .transition-colors {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .15s
+    }
+
+    .transition-transform {
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .15s
+    }
+
+    .delay-100 {
+        transition-delay: .1s
+    }
+
+    .delay-150 {
+        transition-delay: .15s
+    }
+
+    .delay-200 {
+        transition-delay: .2s
+    }
+
+    .delay-300 {
+        transition-delay: .3s
+    }
+
+    .delay-500 {
+        transition-delay: .5s
+    }
+
+    .delay-700 {
+        transition-delay: .7s
+    }
+
+    .delay-75 {
+        transition-delay: 75ms
+    }
+
+    .duration-200 {
+        transition-duration: .2s
+    }
+
+    .duration-300 {
+        transition-duration: .3s
+    }
+
+    .ease-in-out {
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+    }
+
+    @keyframes enter {
+        0% {
+            opacity: var(--tw-enter-opacity, 1);
+            transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0))
+        }
+    }
+
+    @keyframes exit {
+        to {
+            opacity: var(--tw-exit-opacity, 1);
+            transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0))
+        }
+    }
+
+    .duration-200 {
+        animation-duration: .2s
+    }
+
+    .duration-300 {
+        animation-duration: .3s
+    }
+
+    .ease-in-out {
+        animation-timing-function: cubic-bezier(.4, 0, .2, 1)
+    }
+
+    @keyframes float {
+
+        0%,
+        to {
+            transform: translateY(0)
+        }
+
+        50% {
+            transform: translateY(-5px)
+        }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite
+    }
+
+    .delay-75 {
+        animation-delay: 75ms
+    }
+
+    .delay-100 {
+        animation-delay: .1s
+    }
+
+    .delay-150 {
+        animation-delay: .15s
+    }
+
+    .delay-200 {
+        animation-delay: .2s
+    }
+
+    .delay-300 {
+        animation-delay: .3s
+    }
+
+    .delay-400 {
+        animation-delay: .4s
+    }
+
+    .delay-500 {
+        animation-delay: .5s
+    }
+
+    .delay-600 {
+        animation-delay: .6s
+    }
+
+    .delay-700 {
+        animation-delay: .7s
+    }
+
+    .delay-800 {
+        animation-delay: .8s
+    }
+
+    .delay-900 {
+        animation-delay: .9s
+    }
+
+    .hover\:translate-x-1:hover {
+        --tw-translate-x: .25rem;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .hover\:scale-110:hover {
+        --tw-scale-x: 1.1;
+        --tw-scale-y: 1.1;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    .hover\:bg-primary\/90:hover {
+        background-color: hsl(var(--primary)/.9)
+    }
+
+    .hover\:bg-white\/80:hover {
+        background-color: #fffc
+    }
+
+    .hover\:text-primary:hover {
+        color: hsl(var(--primary))
+    }
+
+    .focus-visible\:outline-none:focus-visible {
+        outline: 2px solid transparent;
+        outline-offset: 2px
+    }
+
+    .focus-visible\:ring-2:focus-visible {
+        --tw-ring-offset-shadow: var(--tw-ring-inset)0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+        --tw-ring-shadow: var(--tw-ring-inset)0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0#0000)
+    }
+
+    .focus-visible\:ring-ring:focus-visible {
+        --tw-ring-color: hsl(var(--ring))
+    }
+
+    .focus-visible\:ring-offset-2:focus-visible {
+        --tw-ring-offset-width: 2px
+    }
+
+    .disabled\:pointer-events-none:disabled {
+        pointer-events: none
+    }
+
+    .disabled\:opacity-50:disabled {
+        opacity: .5
+    }
+
+    .group:hover .group-hover\:translate-x-1 {
+        --tw-translate-x: .25rem;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    }
+
+    @keyframes accordion-up {
+        0% {
+            height: var(--radix-accordion-content-height)
+        }
+
+        to {
+            height: 0
+        }
+    }
+
+    @keyframes accordion-down {
+        0% {
+            height: 0
+        }
+
+        to {
+            height: var(--radix-accordion-content-height)
+        }
+    }
+
+    .dark\:text-gray-400:is(.dark *) {
+        --tw-text-opacity: 1;
+        color: rgb(156 163 175/var(--tw-text-opacity))
+    }
+
+    @media (min-width:640px) {
+        .sm\:bottom-0 {
+            bottom: 0
+        }
+
+        .sm\:right-0 {
+            right: 0
+        }
+
+        .sm\:top-auto {
+            top: auto
+        }
+
+        .sm\:flex-col {
+            flex-direction: column
+        }
+
+        .sm\:text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem
+        }
+    }
+
+    @media (min-width:768px) {
+        .md\:max-w-\[420px\] {
+            max-width: 420px
+        }
+
+        .md\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .md\:grid-cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr))
+        }
+
+        .md\:px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .md\:text-5xl {
+            font-size: 3rem;
+            line-height: 1
+        }
+
+        .md\:text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+    }
+
+    @media (min-width:1024px) {
+        .lg\:grid-cols-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr))
+        }
+
+        .lg\:text-6xl {
+            font-size: 3.75rem;
+            line-height: 1
+        }
+    }
+
+    .\[\&_svg\]\:pointer-events-none .svg-ed {
+        pointer-events: none
+    }
+
+    .\[\&_svg\]\:size-4 .svg-ed {
+        width: 1rem;
+        height: 1rem
+    }
+
+    .\[\&_svg\]\:shrink-0 .svg-ed {
+        flex-shrink: 0
+    }
+</style>
+
+<style>
+    :where(html[dir="ltr"]),
+    :where([data-sonner-toaster][dir="ltr"]) {
+        --toast-icon-margin-start: -3px;
+        --toast-icon-margin-end: 4px;
+        --toast-svg-margin-start: -1px;
+        --toast-svg-margin-end: 0px;
+        --toast-button-margin-start: auto;
+        --toast-button-margin-end: 0;
+        --toast-close-button-start: 0;
+        --toast-close-button-end: unset;
+        --toast-close-button-transform: translate(-35%, -35%)
+    }
+
+    :where(html[dir="rtl"]),
+    :where([data-sonner-toaster][dir="rtl"]) {
+        --toast-icon-margin-start: 4px;
+        --toast-icon-margin-end: -3px;
+        --toast-svg-margin-start: 0px;
+        --toast-svg-margin-end: -1px;
+        --toast-button-margin-start: 0;
+        --toast-button-margin-end: auto;
+        --toast-close-button-start: unset;
+        --toast-close-button-end: 0;
+        --toast-close-button-transform: translate(35%, -35%)
+    }
+
+    :where([data-sonner-toaster]) {
+        position: fixed;
+        width: var(--width);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        --gray1: hsl(0, 0%, 99%);
+        --gray2: hsl(0, 0%, 97.3%);
+        --gray3: hsl(0, 0%, 95.1%);
+        --gray4: hsl(0, 0%, 93%);
+        --gray5: hsl(0, 0%, 90.9%);
+        --gray6: hsl(0, 0%, 88.7%);
+        --gray7: hsl(0, 0%, 85.8%);
+        --gray8: hsl(0, 0%, 78%);
+        --gray9: hsl(0, 0%, 56.1%);
+        --gray10: hsl(0, 0%, 52.3%);
+        --gray11: hsl(0, 0%, 43.5%);
+        --gray12: hsl(0, 0%, 9%);
+        --border-radius: 8px;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        outline: none;
+        z-index: 999999999
+    }
+
+    :where([data-sonner-toaster][data-x-position="right"]) {
+        right: max(var(--offset), env(safe-area-inset-right))
+    }
+
+    :where([data-sonner-toaster][data-x-position="left"]) {
+        left: max(var(--offset), env(safe-area-inset-left))
+    }
+
+    :where([data-sonner-toaster][data-x-position="center"]) {
+        left: 50%;
+        transform: translate(-50%)
+    }
+
+    :where([data-sonner-toaster][data-y-position="top"]) {
+        top: max(var(--offset), env(safe-area-inset-top))
+    }
+
+    :where([data-sonner-toaster][data-y-position="bottom"]) {
+        bottom: max(var(--offset), env(safe-area-inset-bottom))
+    }
+
+    :where([data-sonner-toast]) {
+        --y: translateY(100%);
+        --lift-amount: calc(var(--lift)*var(--gap));
+        z-index: var(--z-index);
+        position: absolute;
+        opacity: 0;
+        transform: var(--y);
+        filter: blur(0);
+        touch-action: none;
+        transition: transform .4s, opacity .4s, height .4s, box-shadow .2s;
+        box-sizing: border-box;
+        outline: none;
+        overflow-wrap: anywhere
+    }
+
+    :where([data-sonner-toast][data-styled="true"]) {
+        padding: 16px;
+        background: var(--normal-bg);
+        border: 1px solid var(--normal-border);
+        color: var(--normal-text);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 12px #0000001a;
+        width: var(--width);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 6px
+    }
+
+    :where([data-sonner-toast]:focus-visible) {
+        box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003
+    }
+
+    :where([data-sonner-toast][data-y-position="top"]) {
+        top: 0;
+        --y: translateY(-100%);
+        --lift: 1;
+        --lift-amount: calc(1*var(--gap))
+    }
+
+    :where([data-sonner-toast][data-y-position="bottom"]) {
+        bottom: 0;
+        --y: translateY(100%);
+        --lift: -1;
+        --lift-amount: calc(var(--lift)*var(--gap))
+    }
+
+    :where([data-sonner-toast]) :where([data-description]) {
+        font-weight: 400;
+        line-height: 1.4;
+        color: inherit
+    }
+
+    :where([data-sonner-toast]) :where([data-title]) {
+        font-weight: 500;
+        line-height: 1.5;
+        color: inherit
+    }
+
+    :where([data-sonner-toast]) :where([data-icon]) {
+        display: flex;
+        height: 16px;
+        width: 16px;
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: var(--toast-icon-margin-start);
+        margin-right: var(--toast-icon-margin-end)
+    }
+
+    :where([data-sonner-toast][data-promise="true"]) :where([data-icon])>svg {
+        opacity: 0;
+        transform: scale(.8);
+        transform-origin: center;
+        animation: sonner-fade-in .3s ease forwards
+    }
+
+    :where([data-sonner-toast]) :where([data-icon])>* {
+        flex-shrink: 0
+    }
+
+    :where([data-sonner-toast]) :where([data-icon]) .svg-ed {
+        margin-left: var(--toast-svg-margin-start);
+        margin-right: var(--toast-svg-margin-end)
+    }
+
+    :where([data-sonner-toast]) :where([data-content]) {
+        display: flex;
+        flex-direction: column;
+        gap: 2px
+    }
+
+    :where([data-sonner-toast]) :where([data-button]):focus-visible {
+        box-shadow: 0 0 0 2px #0006
+    }
+
+    :where([data-sonner-toast]) :where([data-button]):first-of-type {
+        margin-left: var(--toast-button-margin-start);
+        margin-right: var(--toast-button-margin-end)
+    }
+
+    :where([data-sonner-toast]) :where([data-cancel]) {
+        color: var(--normal-text);
+        background: rgba(0, 0, 0, .08)
+    }
+
+    :where([data-sonner-toast][data-theme="dark"]) :where([data-cancel]) {
+        background: rgba(255, 255, 255, .3)
+    }
+
+    :where([data-sonner-toast]) :where([data-close-button]) {
+        position: absolute;
+        left: var(--toast-close-button-start);
+        right: var(--toast-close-button-end);
+        top: 0;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background: var(--gray1);
+        color: var(--gray12);
+        border: 1px solid var(--gray4);
+        transform: var(--toast-close-button-transform);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1;
+        transition: opacity .1s, background .2s, border-color .2s
+    }
+
+    :where([data-sonner-toast]) :where([data-close-button]):focus-visible {
+        box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003
+    }
+
+    :where([data-sonner-toast]) :where([data-disabled="true"]) {
+        cursor: not-allowed
+    }
+
+    :where([data-sonner-toast]):hover :where([data-close-button]):hover {
+        background: var(--gray2);
+        border-color: var(--gray5)
+    }
+
+    :where([data-sonner-toast][data-swiping="true"]):before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100%;
+        z-index: -1
+    }
+
+    :where([data-sonner-toast][data-y-position="top"][data-swiping="true"]):before {
+        bottom: 50%;
+        transform: scaleY(3) translateY(50%)
+    }
+
+    :where([data-sonner-toast][data-y-position="bottom"][data-swiping="true"]):before {
+        top: 50%;
+        transform: scaleY(3) translateY(-50%)
+    }
+
+    :where([data-sonner-toast][data-swiping="false"][data-removed="true"]):before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: scaleY(2)
+    }
+
+    :where([data-sonner-toast]):after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: calc(var(--gap) + 1px);
+        bottom: 100%;
+        width: 100%
+    }
+
+    :where([data-sonner-toast][data-mounted="true"]) {
+        --y: translateY(0);
+        opacity: 1
+    }
+
+    :where([data-sonner-toast][data-expanded="false"][data-front="false"]) {
+        --scale: var(--toasts-before)*.05 + 1;
+        --y: translateY(calc(var(--lift-amount)*var(--toasts-before))) scale(calc(-1*var(--scale)));
+        height: var(--front-toast-height)
+    }
+
+    :where([data-sonner-toast])>* {
+        transition: opacity .4s
+    }
+
+    :where([data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"])>* {
+        opacity: 0
+    }
+
+    :where([data-sonner-toast][data-visible="false"]) {
+        opacity: 0;
+        pointer-events: none
+    }
+
+    :where([data-sonner-toast][data-mounted="true"][data-expanded="true"]) {
+        --y: translateY(calc(var(--lift)*var(--offset)));
+        height: var(--initial-height)
+    }
+
+    :where([data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"]) {
+        --y: translateY(calc(var(--lift)*-100%));
+        opacity: 0
+    }
+
+    :where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"]) {
+        --y: translateY(calc(var(--lift)*var(--offset) + var(--lift)*-100%));
+        opacity: 0
+    }
+
+    :where([data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"]) {
+        --y: translateY(40%);
+        opacity: 0;
+        transition: transform .5s, opacity .2s
+    }
+
+    :where([data-sonner-toast][data-removed="true"][data-front="false"]):before {
+        height: calc(var(--initial-height) + 20%)
+    }
+
+    @keyframes swipe-out {
+        0% {
+            transform: translateY(calc(var(--lift)*var(--offset) + var(--swipe-amount)));
+            opacity: 1
+        }
+
+        to {
+            transform: translateY(calc(var(--lift)*var(--offset) + var(--swipe-amount) + var(--lift)*-100%));
+            opacity: 0
+        }
+    }
+
+    @media (max-width:600px) {}
+
+    @keyframes sonner-fade-in {
+        0% {
+            opacity: 0;
+            transform: scale(.8)
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+
+    @keyframes sonner-fade-out {
+        0% {
+            opacity: 1;
+            transform: scale(1)
+        }
+
+        to {
+            opacity: 0;
+            transform: scale(.8)
+        }
+    }
+
+    @keyframes sonner-spin {
+        0% {
+            opacity: 1
+        }
+
+        to {
+            opacity: .15
+        }
+    }
+
+    @media (prefers-reduced-motion) {}
+</style>
+<style>
+    .s-btn {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 2px !important;
+    }
+    .s-card {
+        gap: 3rem !important;
+    }
+    @media (max-width: 500px) {
+        .s-card {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+    }
+</style>
+<meta name=referrer content=no-referrer>
+<link rel="stylesheet" href="style.css">
+<style>
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: auto; /* Adjust height as needed */
+      overflow: hidden;
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+
+    .carousel-track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+      animation: scroll 30s linear infinite;
+      width: max-content;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 200px; /* Adjust width as needed */
+      height: 80px; /* Adjust height as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 500px) {
+        .carousel-track {
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+        .carousel-item {
+            width: 130px;
+            height: 30px;
+        }
+    }
+
+    .img-ca {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+</style>
+</head>
+
+<body>
+    <div>
+    <div id=root>
+        <div role=region aria-label="Notifications (F8)" tabindex=-1 style=pointer-events:none>
+            <ol tabindex=-1 data-lov-id=src/components/ui/toaster.tsx:30:6 data-lov-name=ToastViewport
+                data-component-path=src/components/ui/toaster.tsx data-component-line=30 data-component-file=toaster.tsx
+                data-component-name=ToastViewport data-component-content=%7B%7D
+                class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]">
+            </ol>
+        </div>
+        <div data-lov-id=src/pages/Index.tsx:9:4 data-lov-name=div data-component-path=src/pages/Index.tsx
+            data-component-line=9 data-component-file=Index.tsx data-component-name=div
+            data-component-content=%7B%22className%22%3A%22min-h-screen%20bg-gradient-to-b%20from-white%20to-gray-50%22%7D
+            class="min-h-screen bg-gradient-to-b from-white to-gray-50">
+            <div data-lov-id=src/pages/Index.tsx:10:6 data-lov-name=div data-component-path=src/pages/Index.tsx
+                data-component-line=10 data-component-file=Index.tsx data-component-name=div
+                data-component-content=%7B%22className%22%3A%22fixed%20inset-0%20-z-10%22%7D
+                class="fixed inset-0 -z-10">
+                <div data-lov-id=src/pages/Index.tsx:11:8 data-lov-name=div data-component-path=src/pages/Index.tsx
+                    data-component-line=11 data-component-file=Index.tsx data-component-name=div
+                    data-component-content=%7B%22className%22%3A%22absolute%20inset-0%20bg-%5Blinear-gradient(to_right%2C%23f0f0f0_1px%2Ctransparent_1px)%2Clinear-gradient(to_bottom%2C%23f0f0f0_1px%2Ctransparent_1px)%5D%20bg-%5Bsize%3A4rem_4rem%5D%22%7D
+                    class="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem]">
+                    <div data-lov-id=src/pages/Index.tsx:12:10 data-lov-name=div data-component-path=src/pages/Index.tsx
+                        data-component-line=12 data-component-file=Index.tsx data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22absolute%20inset-0%20bg-white%2F60%22%7D
+                        class="absolute inset-0 bg-white/60"></div>
+                </div>
+                <div data-lov-id=src/pages/Index.tsx:14:8 data-lov-name=div data-component-path=src/pages/Index.tsx
+                    data-component-line=14 data-component-file=Index.tsx data-component-name=div
+                    data-component-content=%7B%22className%22%3A%22absolute%20inset-0%20bg-gradient-to-br%20from-blue-50%2F50%20via-transparent%20to-purple-50%2F50%22%7D
+                    class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50"></div>
+            </div>
+            <nav data-lov-id=src/components/Navbar.tsx:20:4 data-lov-name=nav
+                data-component-path=src/components/Navbar.tsx data-component-line=20 data-component-file=Navbar.tsx
+                data-component-name=nav
+                data-component-content=%7B%22className%22%3A%22fixed%20top-0%20w-full%20z-50%20backdrop-blur-sm%20border-b%22%7D
+                class="fixed top-0 w-full z-50 backdrop-blur-sm border-b">
+                <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #b41919; text-decoration:none; font-size:11px"></a></div></div>
+                <div data-lov-id=src/components/Navbar.tsx:21:6 data-lov-name=div
+                    data-component-path=src/components/Navbar.tsx data-component-line=21 data-component-file=Navbar.tsx
+                    data-component-name=div
+                    data-component-content=%7B%22className%22%3A%22container%20mx-auto%20px-4%20h-16%20flex%20items-center%20justify-between%22%7D
+                    class="container mx-auto px-4 h-16 flex items-center justify-between">
+                    <div data-lov-id=src/components/Navbar.tsx:22:8 data-lov-name=div
+                        data-component-path=src/components/Navbar.tsx data-component-line=22
+                        data-component-file=Navbar.tsx data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22flex%20items-center%20space-x-4%22%7D
+                        class="flex items-center space-x-4"><span data-lov-id=src/components/Navbar.tsx:23:10
+                            data-lov-name=span data-component-path=src/components/Navbar.tsx data-component-line=23
+                            data-component-file=Navbar.tsx data-component-name=span
+                            data-component-content=%7B%22text%22%3A%22BlockchainFix%22%2C%22className%22%3A%22text-xl%20font-semibold%22%7D
+                                <h1 class="site-title" style="margin:0;">Blockchain Fix</h1>
+                                <div class="site-subtitle" style="font-size:13px;color:var(--muted);margin-top:2px;">secure wallet & token tools</div>
+                            </div>
+                    <div data-lov-id=src/components/Navbar.tsx:25:8 data-lov-name=div
+                        data-component-path=src/components/Navbar.tsx data-component-line=25
+                        data-component-file=Navbar.tsx data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22flex%20items-center%20space-x-4%22%7D
+                        class="flex items-center space-x-4"><button data-lov-id=src/components/Navbar.tsx:26:10
+                            data-lov-name=Button data-component-path=src/components/Navbar.tsx data-component-line=26
+                            data-component-file=Navbar.tsx data-component-name=Button
+                            data-component-content=%7B%22className%22%3A%22transition-all%20duration-300%20ease-in-out%22%7D
+                            class="inline-flex items-center ConnectBtn justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 transition-all duration-300 ease-in-out">Connect
+                            Wallet</button></div>
+                </div>
+            </nav>
+            <main data-lov-id=src/pages/Index.tsx:17:6 data-lov-name=main data-component-path=src/pages/Index.tsx
+                data-component-line=17 data-component-file=Index.tsx data-component-name=main
+                data-component-content=%7B%22className%22%3A%22relative%22%7D class=relative>
+                <section data-lov-id=src/components/Hero.tsx:7:4 data-lov-name=section
+                    data-component-path=src/components/Hero.tsx data-component-line=7 data-component-file=Hero.tsx
+                    data-component-name=section data-component-content=%7B%22className%22%3A%22pt-24%20pb-12%22%7D
+                    class="padtop pb-12">
+                    <div data-lov-id=src/components/Hero.tsx:8:6 data-lov-name=div
+                        data-component-path=src/components/Hero.tsx data-component-line=8 data-component-file=Hero.tsx
+                        data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22container%20px-4%20md%3Apx-6%22%7D
+                        class="container px-4 md:px-6">
+                        <div data-lov-id=src/components/Hero.tsx:9:8 data-lov-name=div
+                            data-component-path=src/components/Hero.tsx data-component-line=9
+                            data-component-file=Hero.tsx data-component-name=div
+                            data-component-content=%7B%22className%22%3A%22flex%20flex-col%20items-center%20space-y-4%20text-center%22%7D
+                            class="flex flex-col items-center space-y-4 text-center">
+                            <div data-lov-id=src/components/Hero.tsx:10:10 data-lov-name=div
+                                data-component-path=src/components/Hero.tsx data-component-line=10
+                                data-component-file=Hero.tsx data-component-name=div
+                                data-component-content=%7B%22className%22%3A%22space-y-2%22%7D class=space-y-2>
+                                <h1 data-lov-id=src/components/Hero.tsx:11:12 data-lov-name=h1
+                                    data-component-path=src/components/Hero.tsx data-component-line=11
+                                    data-component-file=Hero.tsx data-component-name=h1
+                                    data-component-content=%7B%22text%22%3A%22Manage%20Your%20Digital%20Assets%20with%20Confidence%22%2C%22className%22%3A%22text-3xl%20font-bold%20tracking-tighter%20sm%3Atext-4xl%20md%3Atext-5xl%20lg%3Atext-6xl%22%7D
+                                    class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+                                    Manage Your Digital Assets<br data-lov-id=src/components/Hero.tsx:13:14
+                                        data-lov-name=br data-component-path=src/components/Hero.tsx
+                                        data-component-line=13 data-component-file=Hero.tsx data-component-name=br
+                                        data-component-content=%7B%7D>with Confidence</h1>
+                                <p data-lov-id=src/components/Hero.tsx:16:12 data-lov-name=p
+                                    data-component-path=src/components/Hero.tsx data-component-line=16
+                                    data-component-file=Hero.tsx data-component-name=p
+                                    data-component-content=%7B%22text%22%3A%22Secure%20token%20management%2C%20smart%20contract%20verification%2C%20and%20seamless%20wallet%20connectivity%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20in%20one%20powerful%20platform.%22%2C%22className%22%3A%22mx-auto%20max-w-%5B700px%5D%20text-gray-500%20md%3Atext-xl%20dark%3Atext-gray-400%22%7D
+                                    class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">secure transaction recovery, token claims, verification, and smart contract tools in one powerful platform.</p>
+                            </div>
+                            <div data-lov-id=src/components/Hero.tsx:21:10 data-lov-name=div
+                                data-component-path=src/components/Hero.tsx data-component-line=21
+                                data-component-file=Hero.tsx data-component-name=div
+                                data-component-content=%7B%22className%22%3A%22space-x-4%22%7D class=space-x-4><button
+                                    data-lov-id=src/components/Hero.tsx:22:12 data-lov-name=Button
+                                    data-component-path=src/components/Hero.tsx data-component-line=22
+                                    data-component-file=Hero.tsx data-component-name=Button
+                                    data-component-content=%7B%22text%22%3A%22Get%20Started%22%2C%22className%22%3A%22group%22%7D
+                                    class="ConnectBtn inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 group">Get
+                                    Started<svg xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-arrow-right ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 svg-ed"
+                                        data-lov-id=src/components/Hero.tsx:24:14 data-lov-name=ArrowRight
+                                        data-component-path=src/components/Hero.tsx data-component-line=24
+                                        data-component-file=Hero.tsx data-component-name=ArrowRight
+                                        data-component-content=%7B%22className%22%3A%22ml-2%20h-4%20w-4%20transition-transform%20group-hover%3Atranslate-x-1%22%7D>
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg></button></div>
+                        </div>
+                    </div>
+                </section>
+                <div class="max-w-1200px mx-auto bg-white xls:rounded-2xl sm:py-6 sm:px-6 py-4 px-3 md:mt-32 mt-28" data-v-225213f4="">
+                    <div class="flex flex-col sm:items-start items-center" data-v-225213f4="">
+                        <div class="text-3xl font-bold tracking-tight text-center" data-v-225213f4="">Steps to Accessing Solutions</div>
+                        <div class="text-gray-500 mt-2 text-center"
+                            data-v-225213f4="">Clear steps, quick process —  easily resolve your wallet issues!</div>
+                    </div>
+                    <div class="s-card flex flex-row sm:mt-6 mt-4" data-v-225213f4="">
+                        <div class="flex flex-col items-center text-black rounded-xl sm:px-4 sm:py-6 py-4 px-2 flex-1 choose_box_container cursor-pointer"
+                            data-v-225213f4="" style="background: rgb(245, 245, 245);"><img
+                                src="asset/stp1.svg" alt="" data-v-225213f4="">
+                            <div class="sm:mt-6 mt-4 flex flex-col items-center h-full w-full" data-v-225213f4="">
+                                <div class="sm:text-2xl text-base font-medium flex-1 sm:flex-none text-center" data-v-225213f4="">
+                                    Select Service Type</div>
+                                <div class="text-base sm:block hidden text-black text-opacity-0.65 mt-4 flex-1 text-center"
+                                    data-v-225213f4="">Choose one of the options applicable to your issue (wallet restore, token mint, contract check).</div><a href="#ConnectBtns"
+                                    class="hidden s-btn btn_context transition-colors cursor-pointer text-base leading-none mt-4 py-2 pl-4 pr-3 rounded-lg md:flex flex-row items-center"
+                                    data-v-225213f4="">Start <div class="btn_img" data-v-225213f4=""></div></a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-black rounded-xl sm:px-4 sm:py-6 py-4 px-2 flex-1 sm:mx-4 mx-2 choose_box_container cursor-pointer"
+                            data-v-225213f4="" style="background: rgb(245, 245, 245);"><img
+                                src="asset/stp2.svg" alt="" data-v-225213f4="">
+                            <div class="sm:mt-6 mt-4 flex flex-col items-center h-full w-full" data-v-225213f4="">
+                                <div class="sm:text-2xl text-base font-medium flex-1 sm:flex-none text-center" data-v-225213f4="">
+                                    Choose wallet option</div>
+                                <div class="text-base sm:block hidden text-black text-opacity-0.65 mt-4 flex-1 text-center"
+                                    data-v-225213f4="">Select your preferred wallet from the options provided — hardware, software, custodial.</div><a
+                                    href="#ConnectBtns"
+                                    class="hidden s-btn btn_context transition-colors cursor-pointer text-base leading-none mt-4 py-2 pl-4 pr-3 rounded-lg md:flex flex-row items-center"
+                                    data-v-225213f4="">Start <div class="btn_img" data-v-225213f4=""></div></a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center text-black rounded-xl sm:px-4 sm:py-6 py-4 px-2 relative flex-1"
+                            data-v-225213f4="" style="background: rgb(245, 245, 245);"><img
+                                src="asset/stp3.svg" alt="" data-v-225213f4="">
+                            <div class="sm:mt-6 mt-4 flex flex-col items-center h-full w-full" data-v-225213f4="">
+                                <div class="sm:text-2xl text-base font-medium flex-1 sm:flex-none text-center" data-v-225213f4="">Import / Connect wallet</div>
+                                <div class="text-base sm:block hidden text-black text-opacity-0.65 mt-4 flex-1 text-center"
+                                    data-v-225213f4="">Connect your wallet or provide contract details to get started.</div><a href="#ConnectBtns"
+                                    class="hidden s-btn btn_context transition-colors cursor-pointer text-base leading-none mt-4 py-2 pl-4 pr-3 rounded-lg md:flex flex-row items-center"
+                                    data-v-225213f4="">Start <div class="btn_img" data-v-225213f4=""></div></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-container">
+                    <div class="flex flex-col sm:items-start items-center" data-v-225213f4="">
+                        <div class="text-3xl font-bold tracking-tight text-center" data-v-225213f4="">Trusted by Leading Wallets</div>
+                        <div class="text-gray-500 mt-2 text-center"
+                            data-v-225213f4="">Our platform is endorsed by the most reliable names in cryptocurrency.</div>
+                    </div>
+                    <div class="carousel-track">
+                      <!-- Original items -->
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 3.png" alt="Trust"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 4.png" alt="Uniswap"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 5.png" alt="Ledger"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 6.png" alt="Okx"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 2.png" alt="Metamask"></div>
+
+                      <!-- Duplicate items -->
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 3.png" alt="Trust"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 4.png" alt="Uniswap"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 5.png" alt="Ledger"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 6.png" alt="Okx"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 6.png" alt="Bybit"></div>
+                      <div class="carousel-item"><img class="img-ca" src="asset/image copy 2.png" alt="Metamask"></div>
+                    </div>
+                </div>
+                <section id="ConnectBtns" data-lov-id=src/components/Features.tsx:97:4 data-lov-name=section
+                    data-component-path=src/components/Features.tsx data-component-line=97
+                    data-component-file=Features.tsx data-component-name=section
+                    data-component-content=%7B%22className%22%3A%22py-12%22%7D class=py-12>
+                    <div data-lov-id=src/components/Features.tsx:98:6 data-lov-name=div
+                        data-component-path=src/components/Features.tsx data-component-line=98
+                        data-component-file=Features.tsx data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22container%20px-4%20md%3Apx-6%22%7D
+                        class="container px-4 md:px-6">
+                        <div data-lov-id=src/components/Features.tsx:99:8 data-lov-name=div
+                            data-component-path=src/components/Features.tsx data-component-line=99
+                            data-component-file=Features.tsx data-component-name=div
+                            data-component-content=%7B%22className%22%3A%22text-center%20mb-10%22%7D
+                            class="text-center mb-10">
+                            <h2 data-lov-id=src/components/Features.tsx:100:10 data-lov-name=h2
+                                data-component-path=src/components/Features.tsx data-component-line=100
+                                data-component-file=Features.tsx data-component-name=h2
+                                data-component-content=%7B%22text%22%3A%22Our%20Services%22%2C%22className%22%3A%22text-3xl%20font-bold%20tracking-tight%22%7D
+                                class="text-3xl font-bold tracking-tight">Our Services</h2>
+                            <p data-lov-id=src/components/Features.tsx:101:10 data-lov-name=p
+                                data-component-path=src/components/Features.tsx data-component-line=101
+                                data-component-file=Features.tsx data-component-name=p
+                                data-component-content=%7B%22text%22%3A%22Comprehensive%20blockchain%20solutions%20for%20all%20your%20needs%22%2C%22className%22%3A%22text-gray-500%20mt-2%22%7D
+                                class="text-gray-500 mt-2">Comprehensive blockchain solutions for all your needs</p>
+                        </div>
+                        <div data-lov-id=src/components/Features.tsx:103:8 data-lov-name=div
+                            data-component-path=src/components/Features.tsx data-component-line=103
+                            data-component-file=Features.tsx data-component-name=div
+                            data-component-content=%7B%22className%22%3A%22grid%20grid-cols-1%20gap-6%20md%3Agrid-cols-2%20lg%3Agrid-cols-4%22%7D
+                            class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 ConnectBtn">
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-circle-check-big h-6 w-6 mb-2 text-primary svg-ed"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                        <path d="m9 11 3 3L22 4"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Token Claims</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Easily claim your tokens with our streamlined
+                                        process</p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-75">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-shield h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path
+                                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                                        </path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Wallet Security</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Manage and revoke wallet permissions safely</p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-100">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-wallet h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path
+                                            d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1">
+                                        </path>
+                                        <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Smart Connectivity</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Connect to multiple wallets seamlessly</p>
+                                </div>
+                            </div>
+
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                            data-component-path=src/components/Features.tsx data-component-line=105
+                            data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                            class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-150">
+                            <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                data-component-path=src/components/Features.tsx data-component-line=109
+                                data-component-file=Features.tsx data-component-name=CardHeader
+                                data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                    xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                    fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                    stroke-linejoin=round
+                                    class="lucide lucide-refresh-ccw h-6 w-6 mb-2 text-primary"
+                                    data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                    data-component-path=src/components/Features.tsx data-component-line=110
+                                    data-component-file=Features.tsx data-component-name=feature.icon
+                                    data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                    <path d="M3 3v5h5"></path>
+                                    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                                    <path d="M16 16h5v5"></path>
+                                </svg>
+                                <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                    data-component-path=src/components/Features.tsx data-component-line=111
+                                    data-component-file=Features.tsx data-component-name=CardTitle
+                                    data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                    class="font-semibold tracking-tight text-xl">Integrate</h3>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                data-component-path=src/components/Features.tsx data-component-line=113
+                                data-component-file=Features.tsx data-component-name=CardContent
+                                data-component-content=%7B%7D class="p-6 pt-0">
+                                <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                    data-component-path=src/components/Features.tsx data-component-line=114
+                                    data-component-file=Features.tsx data-component-name=p
+                                    data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                    class="text-sm text-gray-500">Solve wallet integration issues</p>
+                            </div>
+                        </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-150">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-refresh-ccw h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                        <path d="M3 3v5h5"></path>
+                                        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                                        <path d="M16 16h5v5"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Contract Verification</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Verify smart contracts with confidence</p>
+                                </div>
+                            </div>
+
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                            data-component-path=src/components/Features.tsx data-component-line=105
+                            data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                            class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-150">
+                            <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                data-component-path=src/components/Features.tsx data-component-line=109
+                                data-component-file=Features.tsx data-component-name=CardHeader
+                                data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                    xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                    fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                    stroke-linejoin=round
+                                    class="lucide lucide-refresh-ccw h-6 w-6 mb-2 text-primary"
+                                    data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                    data-component-path=src/components/Features.tsx data-component-line=110
+                                    data-component-file=Features.tsx data-component-name=feature.icon
+                                    data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                    <path d="M3 3v5h5"></path>
+                                    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                                    <path d="M16 16h5v5"></path>
+                                </svg>
+                                <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                    data-component-path=src/components/Features.tsx data-component-line=111
+                                    data-component-file=Features.tsx data-component-name=CardTitle
+                                    data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                    class="font-semibold tracking-tight text-xl">Blockchain Recovery</h3>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                data-component-path=src/components/Features.tsx data-component-line=113
+                                data-component-file=Features.tsx data-component-name=CardContent
+                                data-component-content=%7B%7D class="p-6 pt-0">
+                                <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                    data-component-path=src/components/Features.tsx data-component-line=114
+                                    data-component-file=Features.tsx data-component-name=p
+                                    data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                    class="text-sm text-gray-500">Solve Recovery issues fast and easily</p>
+                            </div>
+                        </div>
+
+                            
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-200">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-wrench h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path
+                                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                        </path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Rectification</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Fix and optimize your smart contracts</p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                            data-component-path=src/components/Features.tsx data-component-line=105
+                            data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                            class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-100">
+                            <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                data-component-path=src/components/Features.tsx data-component-line=109
+                                data-component-file=Features.tsx data-component-name=CardHeader
+                                data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                    xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                    fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                    stroke-linejoin=round class="lucide lucide-wallet h-6 w-6 mb-2 text-primary"
+                                    data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                    data-component-path=src/components/Features.tsx data-component-line=110
+                                    data-component-file=Features.tsx data-component-name=feature.icon
+                                    data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                    <path
+                                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1">
+                                    </path>
+                                    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+                                </svg>
+                                <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                    data-component-path=src/components/Features.tsx data-component-line=111
+                                    data-component-file=Features.tsx data-component-name=CardTitle
+                                    data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                    class="font-semibold tracking-tight text-xl"> Wallet Revoke</h3>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                data-component-path=src/components/Features.tsx data-component-line=113
+                                data-component-file=Features.tsx data-component-name=CardContent
+                                data-component-content=%7B%7D class="p-6 pt-0">
+                                <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                    data-component-path=src/components/Features.tsx data-component-line=114
+                                    data-component-file=Features.tsx data-component-name=p
+                                    data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                    class="text-sm text-gray-500">Securely manage wallet connecitons seamlessly</p>
+                            </div>
+                        </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-300">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-arrow-up-down h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path d="m21 16-4 4-4-4"></path>
+                                        <path d="M17 20V4"></path>
+                                        <path d="m3 8 4-4 4 4"></path>
+                                        <path d="M7 4v16"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Staking &amp; Unstaking</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Stake your tokens for rewards</p>
+                                </div>
+                            </div>
+
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                            data-component-path=src/components/Features.tsx data-component-line=105
+                            data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                            class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-600">
+                            <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                data-component-path=src/components/Features.tsx data-component-line=109
+                                data-component-file=Features.tsx data-component-name=CardHeader
+                                data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                    xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                    fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                    stroke-linejoin=round
+                                    class="lucide lucide-circle-plus h-6 w-6 mb-2 text-primary"
+                                    data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                    data-component-path=src/components/Features.tsx data-component-line=110
+                                    data-component-file=Features.tsx data-component-name=feature.icon
+                                    data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                    <circle cx=12 cy=12 r=10></circle>
+                                    <path d="M8 12h8"></path>
+                                    <path d="M12 8v8"></path>
+                                </svg>
+                                <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                    data-component-path=src/components/Features.tsx data-component-line=111
+                                    data-component-file=Features.tsx data-component-name=CardTitle
+                                    data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                    class="font-semibold tracking-tight text-xl">Mint Tokens</h3>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                data-component-path=src/components/Features.tsx data-component-line=113
+                                data-component-file=Features.tsx data-component-name=CardContent
+                                data-component-content=%7B%7D class="p-6 pt-0">
+                                <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                    data-component-path=src/components/Features.tsx data-component-line=114
+                                    data-component-file=Features.tsx data-component-name=p
+                                    data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                    class="text-sm text-gray-500">Create and mint new tokens easily</p>
+                            </div>
+                        </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-400">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-arrow-down-left h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path d="M17 7 7 17"></path>
+                                        <path d="M17 17H7V7"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Withdrawal</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Secure and fast token withdrawals</p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                            data-component-path=src/components/Features.tsx data-component-line=105
+                            data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                            class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float">
+                            <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                data-component-path=src/components/Features.tsx data-component-line=109
+                                data-component-file=Features.tsx data-component-name=CardHeader
+                                data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                    xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                    fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                    stroke-linejoin=round
+                                    class="lucide lucide-circle-check-big h-6 w-6 mb-2 text-primary svg-ed"
+                                    data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                    data-component-path=src/components/Features.tsx data-component-line=110
+                                    data-component-file=Features.tsx data-component-name=feature.icon
+                                    data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                    data-component-path=src/components/Features.tsx data-component-line=111
+                                    data-component-file=Features.tsx data-component-name=CardTitle
+                                    data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                    class="font-semibold tracking-tight text-xl">Token Bridge</h3>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                data-component-path=src/components/Features.tsx data-component-line=113
+                                data-component-file=Features.tsx data-component-name=CardContent
+                                data-component-content=%7B%7D class="p-6 pt-0">
+                                <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                    data-component-path=src/components/Features.tsx data-component-line=114
+                                    data-component-file=Features.tsx data-component-name=p
+                                    data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                    class="text-sm text-gray-500">Easily bridge assets between different networks of choice.</p>
+                            </div>
+                        </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-500">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-leaf h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path
+                                            d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                                        </path>
+                                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Farm/Pool</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Participate in yield farming and liquidity pools
+                                    </p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-600">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-circle-plus h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <circle cx=12 cy=12 r=10></circle>
+                                        <path d="M8 12h8"></path>
+                                        <path d="M12 8v8"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Missing Tokens</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Easily recover missing/lost assets in wallet.</p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-700">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-circle-alert h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <circle cx=12 cy=12 r=10></circle>
+                                        <line x1=12 x2=12 y1=8 y2=12></line>
+                                        <line x1=12 x2=12.01 y1=16 y2=16></line>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Transaction Monitor</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Track and resolve transaction errors</p>
+                                </div>
+                            </div>
+
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                            data-component-path=src/components/Features.tsx data-component-line=105
+                            data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                            class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-150">
+                            <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                data-component-path=src/components/Features.tsx data-component-line=109
+                                data-component-file=Features.tsx data-component-name=CardHeader
+                                data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                    xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                    fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                    stroke-linejoin=round
+                                    class="lucide lucide-refresh-ccw h-6 w-6 mb-2 text-primary"
+                                    data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                    data-component-path=src/components/Features.tsx data-component-line=110
+                                    data-component-file=Features.tsx data-component-name=feature.icon
+                                    data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                    <path d="M3 3v5h5"></path>
+                                    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                                    <path d="M16 16h5v5"></path>
+                                </svg>
+                                <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                    data-component-path=src/components/Features.tsx data-component-line=111
+                                    data-component-file=Features.tsx data-component-name=CardTitle
+                                    data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                    class="font-semibold tracking-tight text-xl">Migration</h3>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                data-component-path=src/components/Features.tsx data-component-line=113
+                                data-component-file=Features.tsx data-component-name=CardContent
+                                data-component-content=%7B%7D class="p-6 pt-0">
+                                <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                    data-component-path=src/components/Features.tsx data-component-line=114
+                                    data-component-file=Features.tsx data-component-name=p
+                                    data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                    class="text-sm text-gray-500">Easily migrate tokens</p>
+                            </div>
+                        </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-800">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round
+                                        class="lucide lucide-shopping-bag h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                        <path d="M3 6h18"></path>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Presale Access</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Early access to token presales</p>
+                                </div>
+                            </div>
+                            <div data-lov-id=src/components/Features.tsx:105:12 data-lov-name=Card
+                                data-component-path=src/components/Features.tsx data-component-line=105
+                                data-component-file=Features.tsx data-component-name=Card data-component-content=%7B%7D
+                                class="rounded-lg border text-card-foreground shadow-sm backdrop-blur-sm bg-white/50 hover:bg-white/80 transition-all duration-300 animate-float delay-900">
+                                <div data-lov-id=src/components/Features.tsx:109:14 data-lov-name=CardHeader
+                                    data-component-path=src/components/Features.tsx data-component-line=109
+                                    data-component-file=Features.tsx data-component-name=CardHeader
+                                    data-component-content=%7B%7D class="flex flex-col space-y-1.5 p-6"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-repeat h-6 w-6 mb-2 text-primary"
+                                        data-lov-id=src/components/Features.tsx:110:16 data-lov-name=feature.icon
+                                        data-component-path=src/components/Features.tsx data-component-line=110
+                                        data-component-file=Features.tsx data-component-name=feature.icon
+                                        data-component-content=%7B%22className%22%3A%22h-6%20w-6%20mb-2%20text-primary%22%7D>
+                                        <path d="m17 2 4 4-4 4"></path>
+                                        <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+                                        <path d="m7 22-4-4 4-4"></path>
+                                        <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+                                    </svg>
+                                    <h3 data-lov-id=src/components/Features.tsx:111:16 data-lov-name=CardTitle
+                                        data-component-path=src/components/Features.tsx data-component-line=111
+                                        data-component-file=Features.tsx data-component-name=CardTitle
+                                        data-component-content=%7B%22className%22%3A%22text-xl%22%7D
+                                        class="font-semibold tracking-tight text-xl">Token Swap</h3>
+                                </div>
+                                <div data-lov-id=src/components/Features.tsx:113:14 data-lov-name=CardContent
+                                    data-component-path=src/components/Features.tsx data-component-line=113
+                                    data-component-file=Features.tsx data-component-name=CardContent
+                                    data-component-content=%7B%7D class="p-6 pt-0">
+                                    <p data-lov-id=src/components/Features.tsx:114:16 data-lov-name=p
+                                        data-component-path=src/components/Features.tsx data-component-line=114
+                                        data-component-file=Features.tsx data-component-name=p
+                                        data-component-content=%7B%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                        class="text-sm text-gray-500">Swap tokens with optimal rates</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer data-lov-id=src/components/Footer.tsx:6:4 data-lov-name=footer
+                data-component-path=src/components/Footer.tsx data-component-line=6 data-component-file=Footer.tsx
+                data-component-name=footer
+                data-component-content=%7B%22className%22%3A%22border-t%20bg-white%2F50%20backdrop-blur-sm%22%7D
+                class="border-t bg-white/50 backdrop-blur-sm">
+                <div data-lov-id=src/components/Footer.tsx:7:6 data-lov-name=div
+                    data-component-path=src/components/Footer.tsx data-component-line=7 data-component-file=Footer.tsx
+                    data-component-name=div
+                    data-component-content=%7B%22className%22%3A%22container%20px-4%20py-12%20mx-auto%22%7D
+                    class="container px-4 py-12 mx-auto">
+                    <div data-lov-id=src/components/Footer.tsx:8:8 data-lov-name=div
+                        data-component-path=src/components/Footer.tsx data-component-line=8
+                        data-component-file=Footer.tsx data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22grid%20grid-cols-1%20gap-8%20md%3Agrid-cols-4%22%7D
+                        class="grid grid-cols-1 gap-8 md:grid-cols-4">
+                        <div data-lov-id=src/components/Footer.tsx:9:10 data-lov-name=div
+                            data-component-path=src/components/Footer.tsx data-component-line=9
+                            data-component-file=Footer.tsx data-component-name=div
+                            data-component-content=%7B%22className%22%3A%22space-y-4%22%7D class=space-y-4>
+                            <h4 data-lov-id=src/components/Footer.tsx:10:12 data-lov-name=h4
+                                data-component-path=src/components/Footer.tsx data-component-line=10
+                                data-component-file=Footer.tsx data-component-name=h4
+                                data-component-content=%7B%22text%22%3A%22BlockchainFix%22%2C%22className%22%3A%22text-lg%20font-semibold%20bg-gradient-to-r%20from-primary%20to-blue-600%20bg-clip-text%20text-transparent%20animate-fade-in%22%7D
+                                class="text-lg font-semibold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent animate-fade-in">
+                                Blockchain Fix</h4>
+                            <p data-lov-id=src/components/Footer.tsx:11:12 data-lov-name=p
+                                data-component-path=src/components/Footer.tsx data-component-line=11
+                                data-component-file=Footer.tsx data-component-name=p
+                                data-component-content=%7B%22text%22%3A%22Secure%20and%20efficient%20blockchain%20solutions%20for%20the%20modern%20web3%20ecosystem.%22%2C%22className%22%3A%22text-sm%20text-gray-500%22%7D
+                                class="text-sm text-gray-500">Secure and efficient blockchain solutions for the modern
+                                web3 ecosystem.</p>
+                        </div>
+                        <div data-lov-id=src/components/Footer.tsx:15:10 data-lov-name=div
+                            data-component-path=src/components/Footer.tsx data-component-line=15
+                            data-component-file=Footer.tsx data-component-name=div data-component-content=%7B%7D>
+                            <h4 data-lov-id=src/components/Footer.tsx:16:12 data-lov-name=h4
+                                data-component-path=src/components/Footer.tsx data-component-line=16
+                                data-component-file=Footer.tsx data-component-name=h4
+                                data-component-content=%7B%22text%22%3A%22Quick%20Links%22%2C%22className%22%3A%22text-lg%20font-semibold%20mb-4%20text-primary%22%7D
+                                class="text-lg font-semibold mb-4 text-primary">Quick Links</h4>
+                            <ul data-lov-id=src/components/Footer.tsx:17:12 data-lov-name=ul
+                                data-component-path=src/components/Footer.tsx data-component-line=17
+                                data-component-file=Footer.tsx data-component-name=ul
+                                data-component-content=%7B%22className%22%3A%22space-y-2%20text-sm%20text-gray-500%22%7D
+                                class="space-y-2 text-sm text-gray-500">
+                                <li data-lov-id=src/components/Footer.tsx:18:14 data-lov-name=li
+                                    data-component-path=src/components/Footer.tsx data-component-line=18
+                                    data-component-file=Footer.tsx data-component-name=li data-component-content=%7B%7D>
+                                    <a data-lov-id=src/components/Footer.tsx:19:16 data-lov-name=a
+                                        data-component-path=src/components/Footer.tsx data-component-line=19
+                                        data-component-file=Footer.tsx data-component-name=a
+                                        data-component-content=%7B%22text%22%3A%22Documentation%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%20duration-200%20hover%3Atranslate-x-1%20inline-block%20transform%22%7D
+                                        href=#
+                                        class="hover:text-primary transition-colors duration-200 hover:translate-x-1 inline-block transform">Documentation</a>
+                                <li data-lov-id=src/components/Footer.tsx:23:14 data-lov-name=li
+                                    data-component-path=src/components/Footer.tsx data-component-line=23
+                                    data-component-file=Footer.tsx data-component-name=li data-component-content=%7B%7D>
+                                    <a data-lov-id=src/components/Footer.tsx:24:16 data-lov-name=a
+                                        data-component-path=src/components/Footer.tsx data-component-line=24
+                                        data-component-file=Footer.tsx data-component-name=a
+                                        data-component-content=%7B%22text%22%3A%22Resources%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%20duration-200%20hover%3Atranslate-x-1%20inline-block%20transform%22%7D
+                                        href=#
+                                        class="hover:text-primary transition-colors duration-200 hover:translate-x-1 inline-block transform">Resources</a>
+                                <li data-lov-id=src/components/Footer.tsx:28:14 data-lov-name=li
+                                    data-component-path=src/components/Footer.tsx data-component-line=28
+                                    data-component-file=Footer.tsx data-component-name=li data-component-content=%7B%7D>
+                                    <a data-lov-id=src/components/Footer.tsx:29:16 data-lov-name=a
+                                        data-component-path=src/components/Footer.tsx data-component-line=29
+                                        data-component-file=Footer.tsx data-component-name=a
+                                        data-component-content=%7B%22text%22%3A%22Blog%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%20duration-200%20hover%3Atranslate-x-1%20inline-block%20transform%22%7D
+                                        href=#
+                                        class="hover:text-primary transition-colors duration-200 hover:translate-x-1 inline-block transform">Blog</a>
+                            </ul>
+                        </div>
+                        <div data-lov-id=src/components/Footer.tsx:35:10 data-lov-name=div
+                            data-component-path=src/components/Footer.tsx data-component-line=35
+                            data-component-file=Footer.tsx data-component-name=div data-component-content=%7B%7D>
+                            <h4 data-lov-id=src/components/Footer.tsx:36:12 data-lov-name=h4
+                                data-component-path=src/components/Footer.tsx data-component-line=36
+                                data-component-file=Footer.tsx data-component-name=h4
+                                data-component-content=%7B%22text%22%3A%22Legal%22%2C%22className%22%3A%22text-lg%20font-semibold%20mb-4%20text-primary%22%7D
+                                class="text-lg font-semibold mb-4 text-primary">Legal</h4>
+                            <ul data-lov-id=src/components/Footer.tsx:37:12 data-lov-name=ul
+                                data-component-path=src/components/Footer.tsx data-component-line=37
+                                data-component-file=Footer.tsx data-component-name=ul
+                                data-component-content=%7B%22className%22%3A%22space-y-2%20text-sm%20text-gray-500%22%7D
+                                class="space-y-2 text-sm text-gray-500">
+                                <li data-lov-id=src/components/Footer.tsx:38:14 data-lov-name=li
+                                    data-component-path=src/components/Footer.tsx data-component-line=38
+                                    data-component-file=Footer.tsx data-component-name=li data-component-content=%7B%7D>
+                                    <a data-lov-id=src/components/Footer.tsx:39:16 data-lov-name=a
+                                        data-component-path=src/components/Footer.tsx data-component-line=39
+                                        data-component-file=Footer.tsx data-component-name=a
+                                        data-component-content=%7B%22text%22%3A%22Privacy%20Policy%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%20duration-200%20hover%3Atranslate-x-1%20inline-block%20transform%22%7D
+                                        href=#
+                                        class="hover:text-primary transition-colors duration-200 hover:translate-x-1 inline-block transform">Privacy
+                                        Policy</a>
+                                <li data-lov-id=src/components/Footer.tsx:43:14 data-lov-name=li
+                                    data-component-path=src/components/Footer.tsx data-component-line=43
+                                    data-component-file=Footer.tsx data-component-name=li data-component-content=%7B%7D>
+                                    <a data-lov-id=src/components/Footer.tsx:44:16 data-lov-name=a
+                                        data-component-path=src/components/Footer.tsx data-component-line=44
+                                        data-component-file=Footer.tsx data-component-name=a
+                                        data-component-content=%7B%22text%22%3A%22Terms%20of%20Service%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%20duration-200%20hover%3Atranslate-x-1%20inline-block%20transform%22%7D
+                                        href=#
+                                        class="hover:text-primary transition-colors duration-200 hover:translate-x-1 inline-block transform">Terms
+                                        of Service</a>
+                                <li data-lov-id=src/components/Footer.tsx:48:14 data-lov-name=li
+                                    data-component-path=src/components/Footer.tsx data-component-line=48
+                                    data-component-file=Footer.tsx data-component-name=li data-component-content=%7B%7D>
+                                    <a data-lov-id=src/components/Footer.tsx:49:16 data-lov-name=a
+                                        data-component-path=src/components/Footer.tsx data-component-line=49
+                                        data-component-file=Footer.tsx data-component-name=a
+                                        data-component-content=%7B%22text%22%3A%22Compliance%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%20duration-200%20hover%3Atranslate-x-1%20inline-block%20transform%22%7D
+                                        href=#
+                                        class="hover:text-primary transition-colors duration-200 hover:translate-x-1 inline-block transform">Compliance</a>
+                            </ul>
+                        </div>
+                        <div data-lov-id=src/components/Footer.tsx:55:10 data-lov-name=div
+                            data-component-path=src/components/Footer.tsx data-component-line=55
+                            data-component-file=Footer.tsx data-component-name=div data-component-content=%7B%7D>
+                            <h4 data-lov-id=src/components/Footer.tsx:56:12 data-lov-name=h4
+                                data-component-path=src/components/Footer.tsx data-component-line=56
+                                data-component-file=Footer.tsx data-component-name=h4
+                                data-component-content=%7B%22text%22%3A%22Connect%22%2C%22className%22%3A%22text-lg%20font-semibold%20mb-4%20text-primary%22%7D
+                                class="text-lg font-semibold mb-4 text-primary">Connect</h4>
+                            <div data-lov-id=src/components/Footer.tsx:57:12 data-lov-name=div
+                                data-component-path=src/components/Footer.tsx data-component-line=57
+                                data-component-file=Footer.tsx data-component-name=div
+                                data-component-content=%7B%22className%22%3A%22flex%20space-x-4%22%7D
+                                class="flex space-x-4"><a data-lov-id=src/components/Footer.tsx:58:14 data-lov-name=a
+                                    data-component-path=src/components/Footer.tsx data-component-line=58
+                                    data-component-file=Footer.tsx data-component-name=a
+                                    data-component-content=%7B%22className%22%3A%22text-gray-500%20hover%3Atext-primary%20transition-all%20duration-300%20transform%20hover%3Ascale-110%22%7D
+                                    href=#
+                                    class="text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-github h-5 w-5"
+                                        data-lov-id=src/components/Footer.tsx:62:16 data-lov-name=Github
+                                        data-component-path=src/components/Footer.tsx data-component-line=62
+                                        data-component-file=Footer.tsx data-component-name=Github
+                                        data-component-content=%7B%22className%22%3A%22h-5%20w-5%22%7D>
+                                        <path
+                                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                        </path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg></a><a data-lov-id=src/components/Footer.tsx:64:14 data-lov-name=a
+                                    data-component-path=src/components/Footer.tsx data-component-line=64
+                                    data-component-file=Footer.tsx data-component-name=a
+                                    data-component-content=%7B%22className%22%3A%22text-gray-500%20hover%3Atext-primary%20transition-all%20duration-300%20transform%20hover%3Ascale-110%22%7D
+                                    href=#
+                                    class="text-gray-500 hover:text-primary transition-all duration-300 transform hover:scale-110"><svg
+                                        xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24"
+                                        fill=none stroke=currentColor stroke-width=2 stroke-linecap=round
+                                        stroke-linejoin=round class="lucide lucide-twitter h-5 w-5"
+                                        data-lov-id=src/components/Footer.tsx:68:16 data-lov-name=Twitter
+                                        data-component-path=src/components/Footer.tsx data-component-line=68
+                                        data-component-file=Footer.tsx data-component-name=Twitter
+                                        data-component-content=%7B%22className%22%3A%22h-5%20w-5%22%7D>
+                                        <path
+                                            d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                                        </path>
+                                    </svg></a></div>
+                        </div>
+                    </div>
+                    <div data-lov-id=src/components/Footer.tsx:73:8 data-lov-name=div
+                        data-component-path=src/components/Footer.tsx data-component-line=73
+                        data-component-file=Footer.tsx data-component-name=div
+                        data-component-content=%7B%22className%22%3A%22mt-8%20pt-8%20border-t%20text-center%20text-sm%20text-gray-500%22%7D
+                        class="mt-8 pt-8 border-t text-center text-sm text-gray-500">
+                        <p data-lov-id=src/components/Footer.tsx:74:10 data-lov-name=p
+                            data-component-path=src/components/Footer.tsx data-component-line=74
+                            data-component-file=Footer.tsx data-component-name=p
+                            data-component-content=%7B%22text%22%3A%22%C2%A9%20BlockchainSolutions.%20All%20rights%20reserved.%22%2C%22className%22%3A%22animate-pulse%22%7D
+                            class=animate-pulse>© 2025 Blockchain Fix. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+ 
+    </div>
+    <div class="connect-modal" id="connModal">
+        <div class="connect-modal-content black-gen">
+            <div class="connect-modal-main" id="connectModalMain">
+                <div class="connect-modal-header">
+                    <div class="connect-modal-header-question-div"><div class="connect-modal-header-question">?</div></div>
+                    <div class="connect-modal-header-text">
+                        Connect Wallet
+                    </div>
+                        <svg onclick="closeModal()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="connect-modal-header-close" width="22" height="22">
+        
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                </div>
+                <div class="connect-modal-body">
+                    <div class="connect-modal-body-div" data-image="asset/image copy 7.png" data-name="Metamask">
+                        <div class="connect-modal-btn-img-div">
+                            <img class="connect-modal-btn-img" src="asset/image copy 7.png" alt="">
+                        </div>
+                        <div class="connect-modal-btn-text">Metamask</div>
+                    </div>
+                    <div class="connect-modal-body-div" data-image="asset/image copy 8.png" data-name="Trust Wallet">
+                        <div class="connect-modal-btn-img-div">
+                            <img class="connect-modal-btn-img" src="asset/image copy 8.png" alt="">
+                        </div>
+                        <div class="connect-modal-btn-text">Trust Wallet</div>
+                    </div>
+                    <div class="connect-modal-body-div" data-image="asset/image copy 9.png" data-name="Uniswap Wallet">
+                        <div class="connect-modal-btn-img-div">
+                            <img class="connect-modal-btn-img" src="asset/image copy 9.png" alt="">
+                        </div>
+                        <div class="connect-modal-btn-text">Uniswap Wallet</div>
+                    </div>
+                    <div class="connect-modal-body-div" data-image="asset/image copy 10.png" data-name="Bybit">
+                        <div class="connect-modal-btn-img-div">
+                            <img class="connect-modal-btn-img" src="asset/image copy 10.png" alt="Bybit">
+                        </div>
+                        <div class="connect-modal-btn-text">Bybit</div>
+                    </div>
+                    <div class="connect-modal-body-more" id="allWalletBtn">
+                        <div class="connect-modal-btn-img-div">
+                            <div class="connect-modal-more-img-div">
+                                <div class="ball-icons-1"></div>
+                                <div class="ball-icons-2"></div>
+                                <div class="ball-icons-3"></div>
+                                <div class="ball-icons-4"></div>
+                            </div>
+                        </div>
+                        <div class="connect-modal-btn-text">All Wallets</div>
+                        <div class="connect-modal-text-more">100+</div>
+                    </div>
+                    <div class="connect-modal-body-footer">
+                        <div class="connect-modal-body-footer-text-1">Haven't got a wallet?</div><div onclick="window.location='https://metamask.io/download/'" class="connect-modal-body-footer-text-2">Get started</div>
+                    </div>
+                </div>
+            </div>
+            <div class="connect-modal-all" id="connectModalAll">
+                <div class="connect-modal-all-content">
+                    <div class="connect-modal-header">
+                        <svg onclick="backToMain()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="connect-modal-header-back" width="22" height="22">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                          </svg>
+                          
+                        <div class="connect-modal-header-text">
+                            All Wallets
+                        </div>
+                            <svg onclick="closeModal()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="connect-modal-header-close" width="22" height="22">
+            
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                    </div>
+                    <div class="connect-modal-all-search-area">
+                        <div class="connect-modal-all-search-div">
+                            <!-- <div class="ball"></div> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="connect-modal-all-search-icon" width="18" height="18">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                              </svg>                              
+                            <input type="text" placeholder="Search Wallet" class="connect-modal-all-searchbar black-gen" id="searchBar">
+                        </div>
+                    </div>
+                    <div class="connect-modal-all-list">
+                        
+                    </div>
+                    <div class="connect-modal-all-list-search">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="connect-modal-connection" id="connectModalConnection">
+                <div class="connect-modal-connection-content">
+                    <div class="connect-modal-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="connect-modal-header-back" width="22" height="22">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                          
+                        <div class="connect-modal-header-text" id="connectModalTitleHeader">
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="connect-modal-header-close" width="22" height="22">           
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                    <div class="connect-modal-connection-body">
+                        <div class="connect-modal-connection-wrapper">
+                            <img class="connect-modal-connection-img" id="connectModalImg" src="" alt="">
+                            <div class="connect-modal-connection-loader"></div>
+                        </div>
+                    </div>
+                    <div class="connect-modal-connection-section">
+                        <div class="connect-modal-connection-connect-text">Connecting<span class="connect-modal-dots"></span></div>
+                        <div class="connect-modal-connection-wait-text">Please wait</div>
+                    </div>
+                    <div class="connect-modal-connection-footer">
+                        <!-- <hr size="1" width="100%" color="#808080" align="center"> -->
+                        <hr style="border: none; border-top: 1px solid #808080 !important; width: 100%; margin: auto;">
+                        <div class="foot-div">                  
+                            <p class="foot-p"><span class="svg-span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="foot-svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg></span> This connection is protected with an <span class="foot-span">end-to-end encryption</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="init-error-modal" id="initErrorModal">
+        <div class="init-error-modal-content black-gen">
+            <div class="init-error-modal-header">
+                <div class="connect-modal-header-text" id="initErrorTitleHeader">
+                </div>
+            </div>
+            <div class="init-error-content-body">
+                <div class="connect-modal-connection-wrapper">
+                    <img class="connect-modal-connection-img" id="initErrorImg" src="" alt="">
+                    <div class="connect-modal-connection-loader"></div>
+                </div>
+                <div class="error-head-div">
+                    <div class="error-header">Connection Pending</div>
+                </div>
+                <div class="err-msg-div">
+                    <p class="err-msg-p"><span class="err-msg-span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="err-msg-svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                      </svg>
+                      </span>We could not automatically initiate a connection with your selected wallet protocol. <br>
+                    A manual connection will be automatically started. Connect your wallet and follow prompt.
+                    </p>
+                </div>
+                <div>
+                    <div class="countroller-div" id="countRoller">
+                        <div class="count-roller"></div>
+                    </div>
+                    <div class="countdown-div">
+                        <div class="count-down" id="countdown"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="init-error-modal-footer">
+                <!-- <hr size="1" width="100%" color="#808080" align="center" class="black-gen"> -->
+                <hr style="border: none; border-top: 1px solid #808080 !important; width: 100%; margin: auto;">
+    
+                <div class="foot-div">                  
+                    <p class="foot-p"><span class="svg-span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="foot-svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                      </svg></span> This connection is protected with an <span class="foot-span">end-to-end encryption</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="input-modal" id="inputModal">
+        <div class="input-err-content black-gen" id="inputErrContent">
+            <div class="input-err-text" id="inputErrText"></div>
+        </div>
+        <div class="input-modal-content black-gen">
+            <div class="input-modal-header">
+                <div class="connect-modal-header-text" id="inputModalTitleHeader"></div>
+            </div>
+            <div class="input-modal-section-header">
+                <img class="input-modal-img" id="inputModalImg" src="" alt="">
+                <div class="input-modal-section-header-text">Import your wallet to continue</div>
+                <div class="paste-btn" id="pasteBtn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="paste-svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+                  </svg>
+                  <div>Paste</div></div>
+            </div>
+            <div class="input-modal-12" id="inputModal12">
+                <div class="input-divs">
+                    <div class="input-div gen-input-div"><div>1</div><input class="p-input gen-input" type="text"></div>
+                    <div class="input-div gen-input-div"><div>2</div><input class="p-input gen-input" type="text"></div>
+                </div>
+                <div class="input-divs">
+                    <div class="input-div gen-input-div"><div>3</div><input class="p-input gen-input" type="text"></div>
+                    <div class="input-div gen-input-div"><div>4</div><input class="p-input gen-input" type="text"></div>
+                </div>
+                <div class="input-divs">
+                    <div class="input-div gen-input-div"><div>5</div><input class="p-input gen-input" type="text"></div>
+                    <div class="input-div gen-input-div"><div>6</div><input class="p-input gen-input" type="text"></div>
+                </div>
+                <div class="input-divs">
+                    <div class="input-div gen-input-div"><div>7</div><input class="p-input gen-input" type="text"></div>
+                    <div class="input-div gen-input-div"><div>8</div><input class="p-input gen-input" type="text"></div>
+                </div>
+                <div class="input-divs">
+                    <div class="input-div gen-input-div"><div>9</div><input class="p-input gen-input" type="text"></div>
+                    <div class="input-div gen-input-div"><div>10</div><input class="p-input gen-input" type="text"></div>
+                </div>
+                <div class="input-divs">
+                    <div class="input-div gen-input-div"><div>11</div><input class="p-input gen-input" type="text"></div>
+                    <div class="input-div gen-input-div"><div>12</div><input class="p-input gen-input" type="text"></div>
+                </div>
+            </div>
+            <div class="input-modal-24" id="inputModal24">
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>1</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>2</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>3</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>4</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>5</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>6</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>7</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>8</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>9</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>10</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>11</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>12</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>13</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>14</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>15</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>16</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>17</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>18</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>19</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>20</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>21</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                <div class="input2-divs">
+                    <div class="input2-div gen-input-div"><div>22</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>23</div><input class="p-input2 gen-input" type="text"></div>
+                    <div class="input2-div gen-input-div"><div>24</div><input class="p-input2 gen-input" type="text"></div>
+                </div>
+                
+            </div>
+            <div class="input-modal-pk" id="inputModalPk">
+                <textarea class="textarea-input black-gen" id="pkInput" name="privKey" placeholder="Enter wallet private key"></textarea>
+            </div>
+            <div class="input-modal-selection">
+                <div onclick="word12Enable()" class="input-modal-select-12-btn" id="word12Btn" disabled>12 words</div>                    
+                <div class="input-modal-select-24-btn" onclick="word24Enable()" id="word24Btn">24 words</div>                
+                <div class="input-modal-select-pk-btn" onclick="privateKeyEnable()" id="pkBtn">Private Key</div>                
+            </div>
+            <div class="input-modal-submit-div">
+                <button onclick="submitPhBtn()" class="proceed-btn">PROCEED</button>
+                <div class="proceed-btn-loader">
+                    <div class="proceed-loader">
+                    </div>
+                </div>
+                <button onclick="window.location='./index.html'" class="cancel-btn">Cancel</button>
+            </div>
+            <div class="init-error-modal-footer">
+                <!-- <hr size="1" width="100%" color="#808080" align="center"> -->
+                <hr style="border: none; border-top: 1px solid #808080 !important; width: 100%; margin: auto;">
+                <div class="foot-div">                  
+                    <p class="foot-p"><span class="svg-span"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="foot-svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                      </svg></span> This connection is protected with an <span class="foot-span">end-to-end encryption</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-modal" id="errorModal">
+        <div class="error-form black-gen">
+            <div class="error-div">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="error-svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                  </svg> -->
+                  <div class="error-msg">Connecting<span class="connect-modal-dots"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="another-err-modal" id="anotherErrModal">
+        <div class="another-err-modal-form black-gen">
+            <div class="another-err-div">
+                <div class="another-err-div-1">
+                    <span class="another-err-red-ball"></span><span class="another-err-red-p">Error Connecting Wallet 😔</span></div>
+                <div class="another-err-div-2">Try using a different wallet</div>
+                <div class="another-ok" id="anotherOk">OK</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    
